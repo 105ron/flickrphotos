@@ -1,0 +1,13 @@
+<div class="flickr">
+  <ul>
+  	<% photos = render_flickr_sidebar_widget('145316110@N05') %>
+    <% photos.each do |row| -%>
+      <li>
+        <% row.each do |p| %>
+        <% debugger %>
+          <%= link_to(image_tag(FlickRaw.url_o(flickr.photos.getInfo(photo_id: p), :class => 'flickr_photo', :title => p.title, :border => 0, :size => '75x75'), p.url_photopage) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
