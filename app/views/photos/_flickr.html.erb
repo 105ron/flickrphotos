@@ -1,0 +1,11 @@
+<div>
+  <ul>
+    <% photos.each do |row| -%>
+      <li>
+        <% row.each do |p| %>
+          <%= link_to(image_tag(p[:pic], :title => p[:title], :border => 0, :size => '150x150'), p[:link]) %>
+        <% end %>
+      </li>
+    <% end -%>
+  </ul>
+</div>

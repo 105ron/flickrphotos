@@ -1,12 +1,3 @@
-<h4>FlickrPhoto's photos#index</h4>
-<div class="flickr">
- <ul>
-    <% @photos.each do |row| -%>
-      <li>
-        <% row.each do |p| %>
-          <%= link_to(image_tag(p), :class => 'flickr_photo', :title => "flick", :border => 0, :size => '75x75') %>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<h4>Welcome</h4>
+
+<%= render :partial => 'flickr', :locals => { :photos => @photos } %>

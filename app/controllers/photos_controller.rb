@@ -1,6 +1,9 @@
 class PhotosController < ApplicationController
 	def index
-		@photos = photos_urls('145316110@N05')
-		
+		begin
+			@photos = recent_flickr
+		rescue
+			render :partial => '/photos/unavailable'
+		end
 	end
 end
