@@ -1,9 +1,12 @@
 <div>
   <ul>
-    <% photos.each do |row| -%>
+      <% photos.each do |row| -%>
       <li>
         <% row.each do |p| %>
-          <%= link_to(image_tag(p[:pic], :title => p[:title], :border => 0, :size => '150x150'), p[:link]) %>
+        	<!--if p[:pic] -> In case user doesn't have enough pictures to fill array -->
+          <% unless p.nil? %>
+        	  <%= link_to(image_tag(p[:pic], :title => p[:title], :border => 0, :size => '150x150'), p[:link]) %>
+          <% end %>
         <% end %>
       </li>
     <% end -%>

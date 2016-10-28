@@ -1,0 +1,9 @@
+<h4>Here's your recent flickr acticity</h4>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:user_id, "User ID:") %>
+  <%= text_field_tag(:user_id) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<p>Input a Flickr user ID above to see your recent activity</p>
+<p>Here is the recent activity from your selected user</p>
+<%= render :partial => 'flickr', :locals => { :photos => @photos } %>

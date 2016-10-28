@@ -1,3 +1,12 @@
 <h4>Welcome</h4>
-
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:user_id, "User ID:") %>
+  <%= text_field_tag(:user_id) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<p>Input your Flickr user ID above to see your recent activity</p>
+<p>Here is some recent activity on Flickr, click and image to see more from the user</p>
 <%= render :partial => 'flickr', :locals => { :photos => @photos } %>
+  
+
+<!-- search_path(user_id: p[:user]) partial vs layout -->

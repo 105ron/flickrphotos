@@ -1,5 +1,13 @@
-<div class="flickr">
+<h4>Welcome</h4>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:user_id, "User ID:") %>
+  <%= text_field_tag(:user_id) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<div>
   <ul>
-    <p>Flickr error. Contact site admin</p>
-  </ul>
+    <p>Uh oh. Something went wrong. Did you user a correct user ID?</p>
+      
+     <%= link_to(image_tag("error.jpeg", :alt => "rss feed"), root_path) %>
+    </ul>
 </div>
